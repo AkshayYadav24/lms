@@ -37,7 +37,7 @@ public class SignUpServlet extends HttpServlet {
         int result = user.saveUser();
 
         if (result != 0) {
-            nextPage = "sucess.jsp?user_id="+  result;
+            nextPage = "sucess.jsp?user_id="+  result + "&user_type_id="+userTypeId;
         }
 
         response.sendRedirect(nextPage);

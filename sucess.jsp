@@ -7,5 +7,6 @@
 </head>
 <body>
     <h1>${param.user_id}</h1>
+    <a href="login.do?user_type_id=${param.user_type_id}">login</a>
 </body>
 </html>

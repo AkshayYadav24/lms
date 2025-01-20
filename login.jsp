@@ -75,7 +75,7 @@
             password.addEventListener('click', (e) => {
                 password.type = 'password';
                 password_eye.src = 'static/media/image/eye_open.svg';
-            })
+            });
         </script>
     </body>
 

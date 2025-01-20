@@ -36,29 +36,29 @@
                         <input type="hidden" name="user_type_id" id="user_type_id" value="${param.user_type_id}">
                         <div class="mb-3">
                             <label for="name" class="form-label fs-5 fw-semibold text-primary">Full Name</label>
-                            <input type="text" class="form-control fs-5" name="name" id="name"
-                                value="">
+                            <input type="text" class="form-control fs-5" name="name" id="name" value="">
                             <small class="text-danger message" id="name_err_msg">Enter Valid Name...</small>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label fs-5 fw-semibold text-primary">Email</label>
-                            <input type="email" class="form-control fs-5" name="email" id="email"
-                                value="">
+                            <input type="email" class="form-control fs-5" name="email" id="email" value="">
                             <small class="text-danger message" id="email_err_msg">Enter Valid Email...</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="password" class="form-label fs-5 fw-semibold text-primary">Password</label>
-                            <input type="password" class="form-control fs-5" name="password" id="password"
-                                value="">
+                            <div class="input-group">
+                                <input type="password" class="form-control fs-5" name="password" id="password" value="">
+                                <span class="input-group-text" id="basic-addon2"><img id="password_eye"
+                                        src="static/media/image/eye_open.svg" width="33px" alt="" srcset=""></span>
+                            </div>
                             <small class="text-danger message" id="password_err_msg">Password is atleast AtoZ, atoz,
                                 0to9,@,#,$,_</small>
                         </div>
 
                         <div class="mb-3">
                             <label for="contact" class="form-label fs-5 fw-semibold text-primary">Contact</label>
-                            <input type="number" class="form-control fs-5" name="contact" id="contact"
-                                value="">
+                            <input type="number" class="form-control fs-5" name="contact" id="contact" value="">
                             <small class="text-danger message" id="contact_err_msg">Enter Valid Contact
                                 Number...</small>
                         </div>
@@ -79,6 +79,8 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
         <script>
             const signup_form = document.querySelector("#signup_form");
 
@@ -86,7 +88,7 @@
             const email_err_msg = document.querySelector("#email_err_msg");
             const password_err_msg = document.querySelector("#password_err_msg");
             const contact_err_msg = document.querySelector("#contact_err_msg");
-           
+
             const name = document.querySelector("#name");
             const email = document.querySelector("#email");
             const password = document.querySelector("#password");
@@ -171,6 +173,24 @@
                     signup_form.submit();
                 }
             })
+
+            // password
+            const password_eye = document.querySelector("#password_eye");
+
+            password_eye.addEventListener('click', (e) => {
+                if (password_eye.src == 'http://localhost:8080/wma/static/media/image/eye_close.svg') {
+                    password.type = 'password';
+                    password_eye.src = 'static/media/image/eye_open.svg';
+                } else {
+                    password.type = 'text';
+                    password_eye.src = 'static/media/image/eye_close.svg';
+                }
+            });
+
+            password.addEventListener('click', (e) => {
+                password.type = 'password';
+                password_eye.src = 'static/media/image/eye_open.svg';
+            });
         </script>
 
     </body>

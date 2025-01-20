@@ -15,7 +15,7 @@ import models.User;
 @WebServlet("/user_dashboard.do")
 public class UserDashboardServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-        String nextPage = "login.do?role_id=1";
+        String nextPage = "login.do?role_id=2";
         HttpSession session = request.getSession();
 
         User user =(User)session.getAttribute("user");
