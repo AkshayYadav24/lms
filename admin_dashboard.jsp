@@ -13,7 +13,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-4">
-                <a href="" class="">Maintenance</a>
+                <a href="maintenance.do" class="">Maintenance</a>
             </div>
             <div class="col-md-4">
                 <a href="">Reports</a>
